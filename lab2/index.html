@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./styles/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+
+  <script src="./actions.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <!-- Абстрактные с-ва header, более конктретные, такие как display: flex;, .container-header -->
+  <header>
+    <p class="title">Ваши файлы</p>
+
+    <div class="sort-select-container">
+      <select name="sorting" id="sort-select">
+        <option value="default">По умолчанию</option>
+        <option value="new ones first">Сначала новые</option>
+        <option value="old ones first">Сначала старые</option>
+      </select>
+      <div class="select-icon">
+        <svg id="arrow-icon-size" xmlns="http://www.w3.org/2000/svg">
+          <use id="arrow-icon" href="./icons/arrow.svg#arrow"/>
+        </svg>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="sidebar">
+
+    <header>
+
+      <div class="brand">
+        <svg id="logo-icon-size" xmlns="http://www.w3.org/2000/svg">
+          <use href="./icons/logo.svg#logo"/>
+        </svg>
+        <h1>Вариант 8</h1>
+      </div>
+      <input class="search" type="text" placeholder="Поиск">
+
+    </header>
+
+
+    <div class="navigation">      
+
+      <input type="radio" id="uploaded-files-btn" name="nav-btn-group" value="one" checked/>
+      <label for="uploaded-files-btn">
+        <svg class="default-icon-size" xmlns="http://www.w3.org/2000/svg">
+          <use class="sidebar-icon" href="./icons/uploaded-files.svg#uploaded-files"/>
+        </svg>
+        Все файлы
+      </label>
+
+      <div class="divider">
+        <hr/>
+      </div>
+
+      <input type="radio" id="favorites-btn" name="nav-btn-group" value="two"/>
+      <label id="favorites-label" for="favorites-btn">
+        <svg class="medium-icon-size" xmlns="http://www.w3.org/2000/svg">
+          <use class="sidebar-icon" href="./icons/favorites.svg#favorites"/>
+        </svg>
+        Избранные
+      </label>  
+
+      <input type="radio" id="trash-bin-btn" name="nav-btn-group" value="three"/>
+      <label for="trash-bin-btn">
+        <svg class="medium-icon-size" xmlns="http://www.w3.org/2000/svg">
+          <use class="sidebar-icon" href="./icons/trash-bin.svg#trash-bin"/>
+        </svg>
+        Корзина
+      </label>
+
+    </div>
+
+
+    <footer>
+      <p>
+        &copy; Вариант 8.<br>
+        Мананников Антон,<br>
+        группа ПИ-22-2.
+      </p>
+    </footer>
+    
+  </section>
+
+  <main>
+    <div class="extension-filter">
+      <input type="radio" id="all-files" name="filter-btn-group" value="all" checked>
+      <label for="all-files">Все типы</label>
+
+      <input type="radio" id="pdf-files" name="filter-btn-group" value="pdf">
+      <label for="pdf-files">PDF</label>
+
+      <input type="radio" id="doc-files" name="filter-btn-group" value="doc">
+      <label for="doc-files">DOC</label>
+
+      <input type="radio" id="xls-files" name="filter-btn-group" value="xls">
+      <label for="xls-files">XLS</label>
+
+      <input type="radio" id="png-files" name="filter-btn-group" value="png">
+      <label for="png-files">PNG</label>
+    </div>
+    
+    <div class="cards">
+      <article class="card">
+        <img src="./icons/pdf-icon.png" alt="">
+        <div class="content">
+          <h2 class="h-card">
+            Супер важный PDF-файл с расписанием на 2023 год
+          </h2>
+          <p>
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p>
+            Последние изменения 27 сентября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="./icons/doc-icon.png" alt="">
+        <div class="content">
+          <h2 class="h-card">
+            Критерии оценки на экзамене в 2023 году
+          </h2>
+          <p>
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p>
+            Последние изменения 27 сентября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="./icons/png-icon.png" alt="">
+        <div class="content">
+          <h2 class="h-card">
+            Фотка с отпуска, в который я так хочу вернуться…
+          </h2>
+          <p>
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p>
+            Последние изменения 27 сентября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="./icons/xls-icon.png" alt="Иконка файлов с расширением .xls">
+        <div class="content">
+          <h2 class="h-card">
+            Табличка со списком покупок
+          </h2>
+          <p>
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p>
+            Последние изменения 27 сентября 2024 года
+          </p>
+        </div>
+      </article>
+    </div>
+
+  </main>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
