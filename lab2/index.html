@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="./styles/css/style.css">
+  <link rel="stylesheet" href="./assets/styles/css/style.css">
   <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
 
   <script src="./actions.js"></script>
@@ -12,161 +12,180 @@
   <title>Document</title>
 </head>
 <body>
+  <h1 class="visually-hidden">Лабораторные работы №2 и №3, вариант №8.</h1>
   <!-- Абстрактные с-ва header, более конктретные, такие как display: flex;, .container-header -->
-  <header>
-    <p class="title">Ваши файлы</p>
+  <header class="border-bottom align-items-center">
+    <p class="display-6 fw-semibold m-0">Ваши файлы</p>
 
-    <div class="sort-select-container">
-      <select name="sorting" id="sort-select">
-        <option value="default">По умолчанию</option>
-        <option value="new ones first">Сначала новые</option>
-        <option value="old ones first">Сначала старые</option>
-      </select>
-      <div class="select-icon">
-        <svg id="arrow-icon-size" xmlns="http://www.w3.org/2000/svg">
-          <use id="arrow-icon" href="./icons/arrow.svg#arrow"/>
+    <div class="dropdown">
+      <button class="btn border rounded-3 px-3 py-2 fw-medium" data-bs-toggle="dropdown" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+        По умолчанию
+        <svg id="arrow-icon-size" class="ms-3">
+          <use id="arrow-icon" href="./assets/icons/icons.svg#arrow"/>
         </svg>
-      </div>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end border-0 rounded-3">
+        <li><a class="dropdown-item active" href="#">По умолчанию</a></li>
+        <li><a class="dropdown-item" href="#">Сначала новые</a></li>
+        <li><a class="dropdown-item" href="#">Сначала старые</a></li>
+      </ul>
     </div>
+   
 
   </header>
 
-  <section class="sidebar">
+  <section class="sidebar d-flex flex-column align-items-center align-items-xl-stretch flex-shrink-0 border-end">
 
-    <header>
+    <header class="mb-3 align-items-center align-items-xl-stretch">
 
-      <div class="brand">
-        <svg id="logo-icon-size" xmlns="http://www.w3.org/2000/svg">
-          <use href="./icons/logo.svg#logo"/>
+      <a class="brand d-flex text-decoration-none" href="#">
+        <svg id="logo-icon-size">
+          <use href="./assets/icons/icons.svg#logo"/>
         </svg>
-        <h1>Вариант 8</h1>
-      </div>
-      <input class="search" type="text" placeholder="Поиск">
+        <span class="fs-5 ms-3 fw-medium">Вариант 8</span>
+      </a>
+      <button class="btn d-flex justify-content-center justify-content-xl-start align-items-center border p-2 px-xl-3">
+        <svg class="medium-icon-size me-2">
+          <use class="default-icon" href="./assets/icons/icons.svg#search"/>
+        </svg>
+        <span>Поиск</span>
+      </button>
 
     </header>
 
 
-    <div class="navigation">      
+    <div class="d-flex flex-column flex-shrink-0 p-3 mb-auto">      
 
-      <input type="radio" id="uploaded-files-btn" name="nav-btn-group" value="one" checked/>
-      <label for="uploaded-files-btn">
-        <svg class="default-icon-size" xmlns="http://www.w3.org/2000/svg">
-          <use class="sidebar-icon" href="./icons/uploaded-files.svg#uploaded-files"/>
-        </svg>
-        Все файлы
-      </label>
-
-      <div class="divider">
-        <hr/>
-      </div>
-
-      <input type="radio" id="favorites-btn" name="nav-btn-group" value="two"/>
-      <label id="favorites-label" for="favorites-btn">
-        <svg class="medium-icon-size" xmlns="http://www.w3.org/2000/svg">
-          <use class="sidebar-icon" href="./icons/favorites.svg#favorites"/>
-        </svg>
-        Избранные
-      </label>  
-
-      <input type="radio" id="trash-bin-btn" name="nav-btn-group" value="three"/>
-      <label for="trash-bin-btn">
-        <svg class="medium-icon-size" xmlns="http://www.w3.org/2000/svg">
-          <use class="sidebar-icon" href="./icons/trash-bin.svg#trash-bin"/>
-        </svg>
-        Корзина
-      </label>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <svg class="default-icon-size bi pe-none me-2">
+              <use class="default-icon" href="./assets/icons/icons.svg#uploaded-files"/>
+            </svg>
+            <span>Все файлы</span>
+          </a>
+        </li>
+        <li>
+          <hr class="border-color"/>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg class="medium-icon-size bi pe-none me-2">
+              <use class="default-icon" href="./assets/icons/icons.svg#favorites"/>
+            </svg>
+            <span>Избранное</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <svg class="medium-icon-size bi pe-none me-2">
+              <use class="default-icon" href="./assets/icons/icons.svg#trash-bin"/>
+            </svg>
+            <span>Корзина</span>
+          </a>
+        </li>
+      </ul>
 
     </div>
 
 
     <footer>
-      <p>
+      <p class="d-none d-xl-block text-secondary">
         &copy; Вариант 8.<br>
-        Мананников Антон,<br>
-        группа ПИ-22-2.
+        Мананников Антон Олегович,<br>
+        группа ПИ-22-2.<br>
+        2024
+      </p>
+      <p class="d-block d-xl-none text-secondary text-center">
+        &copy;<br>
+        М. А.
       </p>
     </footer>
     
   </section>
 
   <main>
-    <div class="extension-filter">
-      <input type="radio" id="all-files" name="filter-btn-group" value="all" checked>
-      <label for="all-files">Все типы</label>
-
-      <input type="radio" id="pdf-files" name="filter-btn-group" value="pdf">
-      <label for="pdf-files">PDF</label>
-
-      <input type="radio" id="doc-files" name="filter-btn-group" value="doc">
-      <label for="doc-files">DOC</label>
-
-      <input type="radio" id="xls-files" name="filter-btn-group" value="xls">
-      <label for="xls-files">XLS</label>
-
-      <input type="radio" id="png-files" name="filter-btn-group" value="png">
-      <label for="png-files">PNG</label>
+    <div class="btn-group-container">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" id="all-files" name="filter-btn-group" value="all" checked>
+        <label class="btn" for="all-files">Все типы</label>
+  
+        <input type="radio" class="btn-check" id="pdf-files" name="filter-btn-group" value="pdf">
+        <label class="btn border" for="pdf-files">PDF</label>
+  
+        <input type="radio" class="btn-check" id="doc-files" name="filter-btn-group" value="doc">
+        <label class="btn border" for="doc-files">DOC</label>
+  
+        <input type="radio" class="btn-check" id="xls-files" name="filter-btn-group" value="xls">
+        <label class="btn border" for="xls-files">XLS</label>
+  
+        <input type="radio" class="btn-check" id="png-files" name="filter-btn-group" value="png">
+        <label class="btn border" for="png-files">PNG</label>
+      </div>
     </div>
     
     <div class="cards">
-      <article class="card">
-        <img src="./icons/pdf-icon.png" alt="">
-        <div class="content">
-          <h2 class="h-card">
+
+      <article class="card flex-row">
+        <img src="./assets/icons/pdf-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
             Супер важный PDF-файл с расписанием на 2023 год
-          </h2>
-          <p>
+          </h5>
+          <p class="card-text">
             Создал: <strong>Мананников Антон</strong>  
           </p>
-          <p>
+          <p class="card-text">
             Последние изменения 27 сентября 2024 года
           </p>
         </div>
       </article>
 
-      <article class="card">
-        <img src="./icons/doc-icon.png" alt="">
-        <div class="content">
-          <h2 class="h-card">
-            Критерии оценки на экзамене в 2023 году
-          </h2>
-          <p>
+      <article class="card flex-row">
+        <img src="./assets/icons/doc-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Критерии оценки на экзамене в 2024 году
+          </h5>
+          <p class="card-text">
             Создал: <strong>Мананников Антон</strong>  
           </p>
-          <p>
-            Последние изменения 27 сентября 2024 года
+          <p class="card-text">
+            Последние изменения 5 октября 2024 года
           </p>
         </div>
       </article>
 
-      <article class="card">
-        <img src="./icons/png-icon.png" alt="">
-        <div class="content">
-          <h2 class="h-card">
-            Фотка с отпуска, в который я так хочу вернуться…
-          </h2>
-          <p>
-            Создал: <strong>Мананников Антон</strong>  
-          </p>
-          <p>
-            Последние изменения 27 сентября 2024 года
-          </p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="./icons/xls-icon.png" alt="Иконка файлов с расширением .xls">
-        <div class="content">
-          <h2 class="h-card">
+      <article class="card flex-row">
+        <img src="./assets/icons/xls-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
             Табличка со списком покупок
-          </h2>
-          <p>
+          </h5>
+          <p class="card-text">
             Создал: <strong>Мананников Антон</strong>  
           </p>
-          <p>
-            Последние изменения 27 сентября 2024 года
+          <p class="card-text">
+            Последние изменения 15 сентября 2024 года
           </p>
         </div>
       </article>
+
+      <article class="card flex-row">
+        <img src="./assets/icons/png-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Фотка с отпуска, в который я так хочу вернуться…
+          </h5>
+          <p class="card-text">
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p class="card-text">
+            Последние изменения 14 августа 2024 года
+          </p>
+        </div>
+      </article>
+
     </div>
 
   </main>

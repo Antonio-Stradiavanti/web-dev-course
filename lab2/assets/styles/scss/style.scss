@@ -1,0 +1,252 @@
+/* Разработка */
+// sass --no-source-map --watch ./assets/styles/scss/style.scss ./assets/styles/css/style.css
+/* Прод */
+// sass --style=compressed ./styles/scss/style.scss ./styles/css/style.css && postcss -u autoprefixer -r ./styles/css/style.css
+/* не :root, так как с-во margin не наследуется. */
+// min -> означает, что удалены все лишние пробелы и т.п.
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Переопределения перменных sass
+$body-color: #354153;
+$primary: $body-color;
+$primary-text-emphasis: #0D1421;
+
+$secondary: #667085;
+
+$body-secondary-bg: #F2F4F7;
+$body-tertiary-bg: #F9FAFB;
+
+$border-color: #EAECF0;
+
+$component-active-bg: $body-secondary-bg;
+$component-active-color: $primary-text-emphasis;
+
+$card-border-color: $border-color;
+
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+
+$nav-pills-border-radius: #{$border-radius-lg};
+// Переопределения ассоциативных массивов
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+}
+
+/* Общие стили */
+svg {
+  fill: none;
+}
+
+#sort-select,
+#search {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+hr.border-color {
+  color: $border-color;
+  opacity: 1;
+}
+
+// Контейнер с логотипом и названием бренда.
+.brand {
+  line-height: 2rem;
+
+  margin-bottom: 1.5rem;
+}
+/* Иконки */
+#arrow-icon-size {
+  width: 12px;
+  height: 8px;
+  & > #arrow-icon {
+    --stroke-color: #{$primary};
+    --stroke-width: 1.75px;
+  }
+}
+#logo-icon-size {
+  width: 2rem;
+  height: 2rem;
+}
+
+.default-icon-size {
+  margin: 0.1825rem 0.25rem;
+
+  width: 1rem;
+  height: 1.125rem;
+
+}
+
+.default-icon {
+  --stroke-color: #{$secondary};
+  --stroke-width: 1.75px;
+}
+
+.medium-icon-size {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.nav-link.active .sidebar-icon {
+  --stroke-color: #{$black};
+}
+
+.dropdown-menu {
+  padding: .375rem;
+
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .08);
+
+  & .dropdown-item {
+    box-sizing: content-box;
+
+    border-radius: .375rem;
+
+    padding: .375rem 1rem;
+
+    width: 186px;
+  }
+}
+
+/* Специфичные стили */
+// тут обычно настраивают шрифт документа
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+
+  height: 100vh;
+  line-height: 1.5rem;
+
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: 96px 1fr;
+
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+
+  background-color: #ffffff;
+
+  & > header {
+    grid-area: header;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--border-color);
+
+    padding: 2rem 2rem 1.5rem;
+  }
+
+  & > .sidebar {
+    grid-area: sidebar;
+  
+    border-right: 1px solid var(--border-color);
+  
+    & > header {
+      display: flex;
+      flex-direction: column;
+  
+      padding: 2rem 1.5rem 0;
+    }
+  
+    & > footer {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  & > main {
+    grid-area: main;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  
+    padding: 2rem;
+  
+    & .btn-check:checked + .btn {
+      background-color: $body-tertiary-bg;
+      border-color: $border-color;
+    }
+  
+    & > .cards {
+      display: grid;
+  
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+  
+      & > .card {
+        padding: 1.5rem;
+        gap: 1rem;
+  
+        & > .card-body {
+          display: flex;
+          flex-direction: column;
+          gap: .5rem;
+  
+          padding: 0;
+  
+          & > .card-title,
+          & > .card-text {
+            margin: 0;
+          }
+  
+          & > .card-title {
+            font-size: 1.125rem;
+          }
+        }
+    
+        & > img {
+          object-fit: contain;
+    
+          width: 96px;
+          height: 96px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  body {
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: 96px 1fr;
+
+    & > main > .cards {
+      grid-template-columns: 1fr;
+    }
+
+    & > .sidebar {
+      & svg {
+        &.medium-icon-size {
+          margin: 0 !important;
+        }
+        &.default-icon-size {
+          margin: 0 2px !important;
+        }
+      }
+      & span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 96px 1fr 96px;
+    grid-template-areas: 
+      "header"
+      "main"
+      "sidebar"
+    ;
+
+    & > .sidebar {
+      display: none !important;
+    }
+  }
+}
