@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./assets/styles/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+
+  <script src="./actions.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="visually-hidden">Лабораторные работы №2 и №3, вариант №8.</h1>
+  <!-- Абстрактные с-ва header, более конктретные, такие как display: flex;, .container-header -->
+  <header class="main-header">
+
+    <a class="brand text-decoration-none" href="#">
+      <svg class="logo-icon-size">
+        <use href="./assets/icons/icons.svg#logo"/>
+      </svg>
+      <span class="fs-5 ms-3 fw-medium">Вариант 8</span>
+    </a>
+    <button class="btn btn-custom border px-xl-3">
+      <svg class="medium-icon-size">
+        <use class="default-icon" href="./assets/icons/icons.svg#search"/>
+      </svg>
+      <span>Поиск</span>
+    </button>
+
+    <button class="btn d-block d-sm-none border p-2" type="button" 
+      data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"
+    >
+      <svg class="medium-icon-size">
+        <use class="default-icon" href="./assets/icons/icons.svg#menu"/>
+      </svg>
+    </button>
+
+  </header>
+
+  <section class="section-header border-bottom align-items-center">
+    <p class="display-6 fw-semibold m-0">Ваши файлы</p>
+
+    <div class="dropdown">
+      <button class="btn border rounded-3 px-3 py-2 fw-medium" data-bs-toggle="dropdown" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+        По умолчанию
+        <svg id="arrow-icon-size" class="ms-3">
+          <use id="arrow-icon" href="./assets/icons/icons.svg#arrow"/>
+        </svg>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end border-0 rounded-3">
+        <li><a class="dropdown-item active" href="#">По умолчанию</a></li>
+        <li><a class="dropdown-item" href="#">Сначала новые</a></li>
+        <li><a class="dropdown-item" href="#">Сначала старые</a></li>
+      </ul>
+    </div>
+   
+
+  </section>
+
+  <section class="sidebar offcanvas-sm offcanvas-start"
+    id="offcanvasLeft"
+    tabindex="-1" aria-labelledby="offcanvasLeftLabel"
+  >
+
+    <div class="offcanvas-header">
+      <div class="brand">
+        <svg class="logo-icon-size">
+          <use href="./assets/icons/icons.svg#logo"/>
+        </svg>
+        <h5 class="offcanvas-title ms-3 fw-medium" id="offcanvasTopLabel">Вариант 8</h5>
+      </div>
+      <button type="button" class="btn-close" 
+        data-bs-dismiss="offcanvas" aria-label="Close"
+        data-bs-target="#offcanvasLeft"
+      >
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="sidebar-header">      
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a class="nav-link btn-custom active" href="#">
+              <svg class="default-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#uploaded-files"/>
+              </svg>
+              <span>Все файлы</span>
+            </a>
+          </li>
+          <li>
+            <hr class="border-color"/>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-custom" href="#">
+              <svg class="medium-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#favorites"/>
+              </svg>
+              <span>Избранное</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-custom" href="#">
+              <svg class="medium-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#trash-bin"/>
+              </svg>
+              <span>Корзина</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="sidebar-footer">
+        <p class="text-secondary">
+          &copy; Вариант 8.<br>
+          Мананников Антон Олегович,<br>
+          группа ПИ-22-2.<br>
+          2024
+        </p>
+        <p class="text-secondary text-center">
+          &copy;<br>
+          М. А.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
+    <div class="btn-group-container">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" id="all-files" name="filter-btn-group" value="all" checked>
+        <label class="btn" for="all-files">Все типы</label>
+  
+        <input type="radio" class="btn-check" id="pdf-files" name="filter-btn-group" value="pdf">
+        <label class="btn border" for="pdf-files">PDF</label>
+  
+        <input type="radio" class="btn-check" id="doc-files" name="filter-btn-group" value="doc">
+        <label class="btn border" for="doc-files">DOC</label>
+  
+        <input type="radio" class="btn-check" id="xls-files" name="filter-btn-group" value="xls">
+        <label class="btn border" for="xls-files">XLS</label>
+  
+        <input type="radio" class="btn-check" id="png-files" name="filter-btn-group" value="png">
+        <label class="btn border" for="png-files">PNG</label>
+      </div>
+    </div>
+    
+    <div class="cards">
+
+      <article class="card flex-row">
+        <img src="./assets/icons/pdf-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Супер важный PDF-файл с расписанием на 2023 год
+          </h5>
+          <p class="card-text">
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p class="card-text">
+            Последние изменения 27 сентября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card flex-row">
+        <img src="./assets/icons/doc-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Критерии оценки на экзамене в 2024 году
+          </h5>
+          <p class="card-text">
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p class="card-text">
+            Последние изменения 5 октября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card flex-row">
+        <img src="./assets/icons/xls-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Табличка со списком покупок
+          </h5>
+          <p class="card-text">
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p class="card-text">
+            Последние изменения 15 сентября 2024 года
+          </p>
+        </div>
+      </article>
+
+      <article class="card flex-row">
+        <img src="./assets/icons/png-icon.png" alt="">
+        <div class="card-body">
+          <h5 class="card-title">
+            Фотка с отпуска, в который я так хочу вернуться…
+          </h5>
+          <p class="card-text">
+            Создал: <strong>Мананников Антон</strong>  
+          </p>
+          <p class="card-text">
+            Последние изменения 14 августа 2024 года
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+  <script src="./assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
