@@ -14,7 +14,32 @@
 <body>
   <h1 class="visually-hidden">Лабораторные работы №2 и №3, вариант №8.</h1>
   <!-- Абстрактные с-ва header, более конктретные, такие как display: flex;, .container-header -->
-  <header class="border-bottom align-items-center">
+  <header class="main-header">
+
+    <a class="brand text-decoration-none" href="#">
+      <svg class="logo-icon-size">
+        <use href="./assets/icons/icons.svg#logo"/>
+      </svg>
+      <span class="fs-5 ms-3 fw-medium">Вариант 8</span>
+    </a>
+    <button class="btn btn-custom border px-xl-3">
+      <svg class="medium-icon-size">
+        <use class="default-icon" href="./assets/icons/icons.svg#search"/>
+      </svg>
+      <span>Поиск</span>
+    </button>
+
+    <button class="btn d-block d-sm-none border p-2" type="button" 
+      data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"
+    >
+      <svg class="medium-icon-size">
+        <use class="default-icon" href="./assets/icons/icons.svg#menu"/>
+      </svg>
+    </button>
+
+  </header>
+
+  <section class="section-header border-bottom align-items-center">
     <p class="display-6 fw-semibold m-0">Ваши файлы</p>
 
     <div class="dropdown">
@@ -32,79 +57,75 @@
     </div>
    
 
-  </header>
-
-  <section class="sidebar d-flex flex-column align-items-center align-items-xl-stretch flex-shrink-0 border-end">
-
-    <header class="mb-3 align-items-center align-items-xl-stretch">
-
-      <a class="brand d-flex text-decoration-none" href="#">
-        <svg id="logo-icon-size">
-          <use href="./assets/icons/icons.svg#logo"/>
-        </svg>
-        <span class="fs-5 ms-3 fw-medium">Вариант 8</span>
-      </a>
-      <button class="btn d-flex justify-content-center justify-content-xl-start align-items-center border p-2 px-xl-3">
-        <svg class="medium-icon-size me-2">
-          <use class="default-icon" href="./assets/icons/icons.svg#search"/>
-        </svg>
-        <span>Поиск</span>
-      </button>
-
-    </header>
-
-
-    <div class="d-flex flex-column flex-shrink-0 p-3 mb-auto">      
-
-      <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">
-            <svg class="default-icon-size bi pe-none me-2">
-              <use class="default-icon" href="./assets/icons/icons.svg#uploaded-files"/>
-            </svg>
-            <span>Все файлы</span>
-          </a>
-        </li>
-        <li>
-          <hr class="border-color"/>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <svg class="medium-icon-size bi pe-none me-2">
-              <use class="default-icon" href="./assets/icons/icons.svg#favorites"/>
-            </svg>
-            <span>Избранное</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <svg class="medium-icon-size bi pe-none me-2">
-              <use class="default-icon" href="./assets/icons/icons.svg#trash-bin"/>
-            </svg>
-            <span>Корзина</span>
-          </a>
-        </li>
-      </ul>
-
-    </div>
-
-
-    <footer>
-      <p class="d-none d-xl-block text-secondary">
-        &copy; Вариант 8.<br>
-        Мананников Антон Олегович,<br>
-        группа ПИ-22-2.<br>
-        2024
-      </p>
-      <p class="d-block d-xl-none text-secondary text-center">
-        &copy;<br>
-        М. А.
-      </p>
-    </footer>
-    
   </section>
 
-  <main>
+  <section class="sidebar offcanvas-sm offcanvas-start"
+    id="offcanvasLeft"
+    tabindex="-1" aria-labelledby="offcanvasLeftLabel"
+  >
+
+    <div class="offcanvas-header">
+      <div class="brand">
+        <svg class="logo-icon-size">
+          <use href="./assets/icons/icons.svg#logo"/>
+        </svg>
+        <h5 class="offcanvas-title ms-3 fw-medium" id="offcanvasTopLabel">Вариант 8</h5>
+      </div>
+      <button type="button" class="btn-close" 
+        data-bs-dismiss="offcanvas" aria-label="Close"
+        data-bs-target="#offcanvasLeft"
+      >
+      </button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="sidebar-header">      
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a class="nav-link btn-custom active" href="#">
+              <svg class="default-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#uploaded-files"/>
+              </svg>
+              <span>Все файлы</span>
+            </a>
+          </li>
+          <li>
+            <hr class="border-color"/>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-custom" href="#">
+              <svg class="medium-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#favorites"/>
+              </svg>
+              <span>Избранное</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-custom" href="#">
+              <svg class="medium-icon-size bi pe-none">
+                <use class="default-icon" href="./assets/icons/icons.svg#trash-bin"/>
+              </svg>
+              <span>Корзина</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="sidebar-footer">
+        <p class="text-secondary">
+          &copy; Вариант 8.<br>
+          Мананников Антон Олегович,<br>
+          группа ПИ-22-2.<br>
+          2024
+        </p>
+        <p class="text-secondary text-center">
+          &copy;<br>
+          М. А.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="main-content">
     <div class="btn-group-container">
       <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" id="all-files" name="filter-btn-group" value="all" checked>
@@ -189,6 +210,6 @@
     </div>
 
   </main>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
