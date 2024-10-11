@@ -1,0 +1,309 @@
+// sass --no-source-map --watch ./lab4-access/assets/styles/scss/style.scss ./lab4-access/assets/styles/css/style.css
+@import "../../../../node_modules/bootstrap/scss/functions";
+
+$border-color: #D3D3D3;
+$body-color: #292929;
+$primary: #FC712D;
+
+$card-bg: #E4E4E4;
+
+$star-color: 55, 55, 55;
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+:root {
+  font-size: 16px;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {  
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "navbar"
+    "text"
+    "cards"
+  ;
+}
+
+svg {
+  fill: none;
+
+  --logo-fill-color: #{$primary};
+  --star-fill-color: rgba(#{$star-color}, 1);
+  --plus-fill-color: #F5F5F5;
+}
+
+.logo-icon {
+  width: 80px;
+  height: 28px;
+}
+
+.star-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.plus-icon {
+  width: 20px;
+  height: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 3px double $border-color;
+  color: $border-color; 
+}
+
+header > hr {
+  max-width: 785px;
+}
+
+main > hr {
+  max-width: 722px;
+}
+
+header > hr,
+main > hr {
+  @include media-breakpoint-down(xl) {
+    max-width: 100%;
+  }
+}
+
+
+.navbar {
+  grid-area: navbar;
+
+  padding: 0; 
+  & .navbar-nav {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 96px; 
+  
+    align-items: center;
+
+    padding: 76px 97px;
+  
+    font-weight: 500;
+    line-height: 1.21rem;
+    
+    @include media-breakpoint-down(lg) {
+      gap: 48px;
+    }
+
+    @include media-breakpoint-down(md) {
+      gap: 32px;
+    }
+  }
+}
+
+.text {
+  grid-area: text;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 55px 97px;
+  
+  & p {
+    font-family: "Kanit", sans-serif;
+    font-weight: 300;
+
+    margin-bottom: 0;
+  }
+
+  & > p {
+    &:nth-child(1) {
+      font-size: 69.74px;
+      font-weight: 600;
+  
+      line-height: 104.26px;
+  
+      margin-bottom: -28px;
+    }
+    &:nth-child(2) {
+      font-size: 113.33px;
+  
+      line-height: 169.42px;
+  
+      color: #FC712D;
+  
+      margin-bottom: -16px;
+    }
+    &:nth-child(3) {
+      font-size: 17.43px;
+      font-weight: 400;
+      
+      line-height: 26.07px;
+  
+      text-transform: capitalize;
+
+      margin-bottom: 19px;
+    }
+  }
+
+  & .add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    gap: 49px;
+  
+    & p {
+      font-size: 55px;
+      line-height: 82.23px;
+    }
+    & a {
+      background-color: #F0F0F0;
+      box-shadow: 4px 6px 10px 0 rgba(0, 0, 0, 0.25);
+
+      padding: 15px 34px 16px 34px;
+
+      font-size: 18px;
+      font-weight: 500;
+
+      line-height: 26.91px;
+
+      color: $body-color;
+
+      text-transform: capitalize;
+    }
+  }
+}
+
+.cards {
+  grid-area: cards;
+
+  display: inline-flex;
+  gap: 64px;
+  flex-wrap: wrap;
+
+  padding: 68px 0 63px 81px;
+
+  & > .card {
+    position: relative;
+
+    padding: 64px 22px 16px 19px;
+
+    border: none;
+    border-radius: 30px;
+
+    & > .card-header {
+      display: inline-flex;
+      gap: 50px;
+
+      padding: 0;
+
+      border: none;
+      background-color: transparent;
+  
+      & p {
+        font-size: 12px;
+        line-height: 12px;
+        margin: 0;
+  
+        &:nth-child(1) {
+          font-weight: 700;
+        }
+        &:nth-child(2) {
+          font-weight: 400;
+        }
+      }
+      
+    }
+
+    & .stars {
+      display: inline-flex;
+      gap: 2px;
+
+      & > svg:last-child {
+        --star-fill-color: rgba(#{$star-color}, 0.5);
+      }
+    }
+
+    & .btn-plus {
+      position: absolute;
+      right: -15px;
+      bottom: -16px;
+
+      display: flex;
+
+      padding: 10px;
+
+      border: none;
+      border-radius: 9px;
+
+      background-color: #1E1E1E;
+
+      &:hover > .plus-icon {
+        --plus-fill-color: #{$primary};
+      }
+    }
+
+    & .img-container {
+      position: absolute;
+
+      bottom: -4px;
+      right: 28px;
+
+      & > img {
+        width: 180px;
+        height: 225.1px;
+
+        filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.15));
+      }
+    }
+  }  
+}
+
+.big-snickers-container,
+.background-text-container {
+  @include media-breakpoint-down(xl) {
+    display: none;
+  }
+}
+
+.big-snickers-container {
+  & .big-snickers {
+    position: absolute;
+    top: -400px;
+    left: 200px;
+  
+    max-width: calc(100% - 200px);
+    max-height: calc(1844.75px - 360px);
+    overflow: hidden;
+    
+    & > img {
+      width: 1890.5px;
+      height: 1844.75px; 
+    }
+  }
+  
+  & .big-snickers:first-child {
+    & > img {
+      filter: blur(50px);
+    }
+  }
+}
+
+.background-text-container {
+  // Эти свойства наследуются
+  font-family: "Londrina Shadow", sans-serif;
+  font-size: 260px;
+  
+  line-height: 307.58px;
+
+  color: rgba(254, 107, 40, 0.15);
+
+  & > p {
+    position: absolute;
+
+    top: 48px;
+    left: 714px;
+  }
+}

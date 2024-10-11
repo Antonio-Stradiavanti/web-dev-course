@@ -1,0 +1,340 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <title>Язык программирования Kotlin</title>
+</head>
+<body>
+  
+  <header>
+    <div class="navbar">
+      <a href="#" class="button icon-button" type="menu">
+        <svg class="standart-icon">
+          <use href="./images/list.svg#list"/>  
+        </svg>
+      </a>
+      <h1>Язык программирования Kotlin</h1>
+    </div>
+    <hr class="double">
+  </header>  
+
+  <main>
+    <table class="infobox">
+      <tbody>
+        <tr>
+          <td class="infobox-image" colspan="2">
+            <a href="https://en.wikipedia.org/wiki/File:Kotlin_logo_2021.svg">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kotlin_logo_2021.svg/180px-Kotlin_logo_2021.svg.png" decoding="async" width="180" height="39" data-file-width="512" data-file-height="111">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <a href="https://en.wikipedia.org/wiki/Programming_paradigm" title="Programming paradigm">Поддерживаемые парадигмы</a>
+          </th>
+          <td class="infobox-data">
+            <ul>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Объектно-ориентированное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Functional_programming">Функциональное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Imperative_programming">Императивное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Declarative_programming">Декларативное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Declarative_programming">Рефлексивное-ориентированное программирование</a>.
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спроектирован</th>
+          <td><a href="https://en.wikipedia.org/wiki/JetBrains">JetBrains</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Разработан</th>
+          <td><a href="https://en.wikipedia.org/wiki/JetBrains">JetBrains</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Появился</th>
+          <td>22 июля 2011; 13 лет назад</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Стабильная версия</th>
+          <td>2.0.20 от 22 августа 2024; менее месяца назад</td>
+        </tr>
+
+        <tr>
+          <th scope="row"><a href="https://en.wikipedia.org/wiki/Type_system">Типизация</a></th>
+          <td>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Type_inference">Вывод типов</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Static_typing">Статическая</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Strong_typing">Строгая</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Поддерживаемые платформы</th>
+          <td>Все</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Лицензия</th>
+          <td><a href="https://en.wikipedia.org/wiki/Apache_License_2.0">Apache License 2.0</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Расширение файлов</th>
+          <td>
+            <ul>
+              <li>.kt;</li>
+              <li>.kts;</li>
+              <li>.kexe;</li>
+              <li>.klib</li>
+            </ul>
+          </td>
+        </tr>  
+
+        <tr>
+          <th scope="row">Сайт</th>
+          <td>
+            <a href="https://kotlinlang.org/">kotlinlang.org</a>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="alter-bg" scope="row" colspan="2">Испытал влияние</th>
+        </tr>
+        <tr>
+          <td class="horizontal-list" colspan="2">
+            <ul>
+              <li>C#</li>
+              <li>Eiffel</li>
+              <li>Gosu</li>
+              <li>Groovy</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>ML</li>
+              <li>Python</li>
+              <li>Scala</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="first-paragraph">
+      <b>Kotlin</b> кроссплатформенный статически типизированный, высокоуровневый, язык программирования с выводом типов.
+
+      Расчитан на полное взаимодействие с Java. Стандартная библиотека Kotlin в JVM-версии зависит от библиотеки классов Java, но вывод типов позволяет сделать синтаксис более лаконичным. Компилируется как в JavaScript, так и в нативный байткод LLVM (low level virtual machine).    
+    </p>
+
+    <p>
+      7 мая 2019 компания <b>Google</b> объявила, что <b>Kotlin</b> — предпочитаемый язык для разработки Android приложений. С момента выхода <a href="https://developer.android.com/studio">Android Studio</a> версии 3.0 в октябре 2019.  <b>Kotlin</b> был включен в качестве альтернативы компилятора Java. По умолчанию исходный код <b>Kotlin</b> компилируется в <a href="https://en.wikipedia.org/wiki/Java_bytecode" target="_blank">байткод Java</a>.
+    </p>
+
+    <h2>История</h2>
+      
+    <p>
+      Название происходит от острова российского острова <a href="#">Котлин</a> в <a href="#">Финском заливе</a>, рядом с <a href="#">Санкт-Петербургом</a>, как название языка программирования <a href="#">Java</a> происходит от индонезийского острова <a href="#">Ява</a>.
+    </p>
+
+
+  </main>
+
+  <footer>
+    <hr class="double">
+    <p>Страница была последний раз отредактирована 11 сентября 2024, 23:33 по Московскому времени.</p>
+  </footer>
+
+</body>
+=======
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="./styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <title>Язык программирования Kotlin</title>
+</head>
+<body>
+  
+  <header>
+    <div class="navbar">
+      <a href="#" class="button icon-button" type="menu">
+        <svg class="standart-icon">
+          <use href="./images/list.svg#list"/>  
+        </svg>
+      </a>
+      <h1>Язык программирования Kotlin</h1>
+    </div>
+    <hr class="double">
+  </header>  
+
+  <main>
+    <table class="infobox">
+      <tbody>
+        <tr>
+          <td class="infobox-image" colspan="2">
+            <a href="https://en.wikipedia.org/wiki/File:Kotlin_logo_2021.svg">
+              <img src="//upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kotlin_logo_2021.svg/180px-Kotlin_logo_2021.svg.png" decoding="async" width="180" height="39" data-file-width="512" data-file-height="111">
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <a href="https://en.wikipedia.org/wiki/Programming_paradigm" title="Programming paradigm">Поддерживаемые парадигмы</a>
+          </th>
+          <td class="infobox-data">
+            <ul>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Объектно-ориентированное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Functional_programming">Функциональное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Imperative_programming">Императивное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Declarative_programming">Декларативное программирование</a>;
+              </li>
+
+              <li>
+                <a href="https://en.wikipedia.org/wiki/Declarative_programming">Рефлексивное-ориентированное программирование</a>.
+              </li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спроектирован</th>
+          <td><a href="https://en.wikipedia.org/wiki/JetBrains">JetBrains</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Разработан</th>
+          <td><a href="https://en.wikipedia.org/wiki/JetBrains">JetBrains</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Появился</th>
+          <td>22 июля 2011; 13 лет назад</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Стабильная версия</th>
+          <td>2.0.20 от 22 августа 2024; менее месяца назад</td>
+        </tr>
+
+        <tr>
+          <th scope="row"><a href="https://en.wikipedia.org/wiki/Type_system">Типизация</a></th>
+          <td>
+            <ul>
+              <li><a href="https://en.wikipedia.org/wiki/Type_inference">Вывод типов</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Static_typing">Статическая</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Strong_typing">Строгая</a></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">Поддерживаемые платформы</th>
+          <td>Все</td>
+        </tr>
+
+        <tr>
+          <th scope="row">Лицензия</th>
+          <td><a href="https://en.wikipedia.org/wiki/Apache_License_2.0">Apache License 2.0</a></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Расширение файлов</th>
+          <td>
+            <ul>
+              <li>.kt;</li>
+              <li>.kts;</li>
+              <li>.kexe;</li>
+              <li>.klib</li>
+            </ul>
+          </td>
+        </tr>  
+
+        <tr>
+          <th scope="row">Сайт</th>
+          <td>
+            <a href="https://kotlinlang.org/">kotlinlang.org</a>
+          </td>
+        </tr>
+
+        <tr>
+          <th class="alter-bg" scope="row" colspan="2">Испытал влияние</th>
+        </tr>
+        <tr>
+          <td class="horizontal-list" colspan="2">
+            <ul>
+              <li>C#</li>
+              <li>Eiffel</li>
+              <li>Gosu</li>
+              <li>Groovy</li>
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>ML</li>
+              <li>Python</li>
+              <li>Scala</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="first-paragraph">
+      <b>Kotlin</b> кроссплатформенный статически типизированный, высокоуровневый, язык программирования с выводом типов.
+
+      Расчитан на полное взаимодействие с Java. Стандартная библиотека Kotlin в JVM-версии зависит от библиотеки классов Java, но вывод типов позволяет сделать синтаксис более лаконичным. Компилируется как в JavaScript, так и в нативный байткод LLVM (low level virtual machine).    
+    </p>
+
+    <p>
+      7 мая 2019 компания <b>Google</b> объявила, что <b>Kotlin</b> — предпочитаемый язык для разработки Android приложений. С момента выхода <a href="https://developer.android.com/studio">Android Studio</a> версии 3.0 в октябре 2019.  <b>Kotlin</b> был включен в качестве альтернативы компилятора Java. По умолчанию исходный код <b>Kotlin</b> компилируется в <a href="https://en.wikipedia.org/wiki/Java_bytecode" target="_blank">байткод Java</a>.
+    </p>
+
+    <h2>История</h2>
+      
+    <p>
+      Название происходит от острова российского острова <a href="#">Котлин</a> в <a href="#">Финском заливе</a>, рядом с <a href="#">Санкт-Петербургом</a>, как название языка программирования <a href="#">Java</a> происходит от индонезийского острова <a href="#">Ява</a>.
+    </p>
+
+
+  </main>
+
+  <footer>
+    <hr class="double">
+    <p>Страница была последний раз отредактирована 11 сентября 2024, 23:33 по Московскому времени.</p>
+  </footer>
+
+</body>
+>>>>>>> lab2-dev
+</html>

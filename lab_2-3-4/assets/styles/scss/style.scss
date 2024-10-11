@@ -1,10 +1,10 @@
 /* Разработка */
 // sass --no-source-map --watch ./assets/styles/scss/style.scss ./assets/styles/css/style.css
 /* Прод */
-// sass --style=compressed ./styles/scss/style.scss ./styles/css/style.css && postcss -u autoprefixer -r ./styles/css/style.css
+// sass --style=compressed ./lab2/assets/styles/scss/style.scss ./lab2/assets/styles/css/style.css && postcss -u autoprefixer -r ./lab2/assets/styles/css/style.css
 /* не :root, так как с-во margin не наследуется. */
 // min -> означает, что удалены все лишние пробелы и т.п.
-@import "../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/functions";
 
 // Переопределения перменных sass
 $body-color: #354153;
@@ -25,13 +25,13 @@ $card-border-color: $border-color;
 
 $offcanvas-horizontal-width: 280px;
 
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/variables-dark";
 
 $nav-pills-border-radius: #{$border-radius-xl};
 // Переопределения ассоциативных массивов
 
-@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
 
 * {
   margin: 0;
