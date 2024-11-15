@@ -9,9 +9,16 @@
 
   <script src="./actions.js"></script>
 
-  <title>Document</title>
+  <title>Вариант 8</title>
 </head>
 <body>
+  <div class="spinner-wrapper">
+    <div class="text-center text-primary">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
   <h1 class="visually-hidden">Лабораторные работы №2 и №3, вариант №8.</h1>
   <!-- Абстрактные с-ва header, более конктретные, такие как display: flex;, .container-header -->
   <header class="main-header">
@@ -43,7 +50,7 @@
     <p class="display-6 fw-semibold m-0">Ваши файлы</p>
 
     <div class="dropdown">
-      <button class="btn border rounded-3 px-3 py-2 fw-medium" data-bs-toggle="dropdown" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+      <button id="dropdownButton" class="btn border rounded-3 px-3 py-2 fw-medium" data-bs-toggle="dropdown" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
         По умолчанию
         <svg id="arrow-icon-size" class="ms-3">
           <use id="arrow-icon" href="./assets/icons/icons.svg#arrow"/>
@@ -146,70 +153,10 @@
     </div>
     
     <div class="cards">
-
-      <article class="card flex-row">
-        <img src="./assets/icons/pdf-icon.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">
-            Супер важный PDF-файл с расписанием на 2023 год
-          </h5>
-          <p class="card-text">
-            Создал: <strong>Мананников Антон</strong>  
-          </p>
-          <p class="card-text">
-            Последние изменения 27 сентября 2024 года
-          </p>
-        </div>
-      </article>
-
-      <article class="card flex-row">
-        <img src="./assets/icons/doc-icon.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">
-            Критерии оценки на экзамене в 2024 году
-          </h5>
-          <p class="card-text">
-            Создал: <strong>Мананников Антон</strong>  
-          </p>
-          <p class="card-text">
-            Последние изменения 5 октября 2024 года
-          </p>
-        </div>
-      </article>
-
-      <article class="card flex-row">
-        <img src="./assets/icons/xls-icon.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">
-            Табличка со списком покупок
-          </h5>
-          <p class="card-text">
-            Создал: <strong>Мананников Антон</strong>  
-          </p>
-          <p class="card-text">
-            Последние изменения 15 сентября 2024 года
-          </p>
-        </div>
-      </article>
-
-      <article class="card flex-row">
-        <img src="./assets/icons/png-icon.png" alt="">
-        <div class="card-body">
-          <h5 class="card-title">
-            Фотка с отпуска, в который я так хочу вернуться…
-          </h5>
-          <p class="card-text">
-            Создал: <strong>Мананников Антон</strong>  
-          </p>
-          <p class="card-text">
-            Последние изменения 14 августа 2024 года
-          </p>
-        </div>
-      </article>
-
     </div>
 
   </main>
-  <script src="./assets/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/scripts/actions.js"></script>
 </body>
 </html>

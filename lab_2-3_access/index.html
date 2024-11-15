@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вариант 9</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/css/style.css">
+
+</head>
+<body>
+  <div class="content">
+    <header>
+      <nav class="navbar border-bottom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <svg class="logo-icon">
+              <use href="./assets/imgs/icons.svg#logo" />
+            </svg>
+            <span>Вариант 9</span>
+          </a>
+  
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">
+                Все файлы
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Избранное
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Корзина
+              </a>
+            </li>
+          </ul>
+  
+          <div class="user-icon-container">
+            <svg class="default-icon">
+              <use href="./assets/imgs/icons.svg#user" />
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="menu">
+        <div class="btn-menu-group d-inline-flex" role="group" aria-label="Basic checkbox toggle button group">
+          <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" checked>
+          <label class="btn btn-outline-primary btn-menu" for="btncheck1">
+            <span>PDF</span>
+            <div class="close-icon-container">
+              <svg class="small-icon">
+                <use href="./assets/imgs/icons.svg#close" />
+              </svg>
+            </div>
+          </label>
+        
+          <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" checked>
+          <label class="btn btn-outline-primary btn-menu" for="btncheck2">
+            <span>DOC</span>
+            <div class="close-icon-container">
+              <svg class="small-icon">
+                <use href="./assets/imgs/icons.svg#close" />
+              </svg>
+            </div>
+          </label>
+        
+          <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" checked>
+          <label class="btn btn-outline-primary btn-menu" for="btncheck3">
+            <span>XLS</span>
+            <div class="close-icon-container">
+              <svg class="small-icon">
+                <use href="./assets/imgs/icons.svg#close" />
+              </svg>
+            </div>
+          </label>
+
+          <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+          <label class="btn btn-outline-primary btn-menu" for="btncheck4">PNG</label>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn border rounded-3 px-3 py-2 fw-medium" data-bs-toggle="dropdown" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            <span>По умолчанию</span>
+            <div class="arrow-icon-container">
+              <svg class="arrow-icon">
+                <use href="./assets/imgs/icons.svg#arrow"/>
+              </svg>
+            </div>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end border-0 rounded-3">
+            <li><a class="dropdown-item active" href="#">По умолчанию</a></li>
+            <li><a class="dropdown-item" href="#">Сначала новые</a></li>
+            <li><a class="dropdown-item" href="#">Сначала старые</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cards">
+
+        <article class="card flex-row">
+          <img src="./assets/imgs/pdf-icon.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title">
+              Супер важный PDF-файл с расписанием на 2023 год
+            </h5>
+            <p class="card-text">
+              Создал: <strong>Мананников Антон</strong>  
+            </p>
+            <p class="card-text">
+              Последние изменения 27 сентября 2024 года
+            </p>
+          </div>
+        </article>
+  
+        <article class="card flex-row">
+          <img src="./assets/imgs/doc-icon.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title">
+              Критерии оценки на экзамене в 2024 году
+            </h5>
+            <p class="card-text">
+              Создал: <strong>Мананников Антон</strong>  
+            </p>
+            <p class="card-text">
+              Последние изменения 5 октября 2024 года
+            </p>
+          </div>
+        </article>
+  
+        <article class="card flex-row">
+          <img src="./assets/imgs/xls-icon.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title">
+              Табличка со списком покупок
+            </h5>
+            <p class="card-text">
+              Создал: <strong>Мананников Антон</strong>  
+            </p>
+            <p class="card-text">
+              Последние изменения 15 сентября 2024 года
+            </p>
+          </div>
+        </article>
+  
+        <article class="card flex-row">
+          <img src="./assets/imgs/png-icon.png" alt="">
+          <div class="card-body">
+            <h5 class="card-title">
+              Фотка с отпуска, в который я так хочу вернуться…
+            </h5>
+            <p class="card-text">
+              Создал: <strong>Мананников Антон</strong>  
+            </p>
+            <p class="card-text">
+              Последние изменения 14 августа 2024 года
+            </p>
+          </div>
+        </article>
+  
+      </div>
+    </main>
+  </div>
+  
+  <footer>
+    <p class="text-secondary">&copy; Вариант 9. Мананников Антон ПИ-22-2</p>
+  </footer>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

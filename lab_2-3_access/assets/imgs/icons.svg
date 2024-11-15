@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg"> 
+  <style>
+    path {
+      fill: var(--icons-fill-color);
+    }
+    #close path {
+      fill: none;
+
+      stroke-width: var(--icon-stroke-width);
+      stroke: var(--icon-light-stroke-color);
+    }
+    #arrow path {
+      fill: none;
+      stroke-width: var(--icon-stroke-width);
+      stroke: var(--icon-dark-stroke-color);
+    }
+  </style>
+  <symbol id="logo" viewBox="0 0 32 32">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2 0H12.8V8.27451L6.94904 2.42355L2.42355 6.94902L8.27453 12.8H0V19.2H8.27451L2.42355 25.0509L6.94904 29.5765L12.8 23.7254V32H19.2V23.7254L25.051 29.5765L29.5765 25.051L23.7254 19.2H32V12.8H23.7254L29.5765 6.94902L25.051 2.42354L19.2 8.27451V0Z" fill="#0D1421"/>
+  </symbol>
+
+  <symbol id="user" viewBox="0 0 24 24" >
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.85 14.282C16.0253 13.6477 16.9555 12.6394 17.493 11.4168C18.0306 10.1942 18.1449 8.82722 17.8178 7.53233C17.4907 6.23744 16.7409 5.0887 15.6872 4.26807C14.6335 3.44744 13.3361 3.00183 12.0005 3.00183C10.6649 3.00183 9.36755 3.44744 8.31384 4.26807C7.26013 5.0887 6.51034 6.23744 6.18324 7.53233C5.85613 8.82722 5.97041 10.1942 6.50798 11.4168C7.04555 12.6394 7.97566 13.6477 9.151 14.282C5.962 14.867 3 16.23 3 17V21H21V17C21 16.23 18.038 14.868 14.85 14.282ZM16 9.00002C16 10.0609 15.5786 11.0783 14.8284 11.8284C14.0783 12.5786 13.0609 13 12 13C10.9391 13 9.92172 12.5786 9.17157 11.8284C8.42143 11.0783 8 10.0609 8 9.00002C8 7.93915 8.42143 6.92173 9.17157 6.17159C9.92172 5.42144 10.9391 5.00002 12 5.00002C13.0609 5.00002 14.0783 5.42144 14.8284 6.17159C15.5786 6.92173 16 7.93915 16 9.00002ZM19 17.748V19H5V17.748C5.377 17.53 5.947 17.268 6.673 17.008C8.269 16.438 10.287 16 12 16C13.713 16 15.73 16.438 17.327 17.009C18.053 17.268 18.623 17.53 19 17.749V17.748Z" fill="#0D1421"/>
+  </symbol>
+
+  <symbol id="close" viewBox="0 0 12 12">
+    <path d="M11 1L1 11M1 1L11 11" stroke="white" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="arrow" viewBox="0 0 12 8">
+    <path d="M1 1.5L6 6.5L11 1.5" stroke="#354153" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>

@@ -1,5 +1,7 @@
 /* Разработка */
-// sass --no-source-map --watch ./assets/styles/scss/style.scss ./assets/styles/css/style.css
+// Относительно каталога web-dev-cource
+// sass --no-source-map --watch ./lab_2-3-4/assets/styles/scss/style.scss ./lab_2-3-4/assets/styles/css/style.css
+
 /* Прод */
 // sass --style=compressed ./lab2/assets/styles/scss/style.scss ./lab2/assets/styles/css/style.css && postcss -u autoprefixer -r ./lab2/assets/styles/css/style.css
 /* не :root, так как с-во margin не наследуется. */
@@ -220,6 +222,8 @@ body {
 .sidebar {
   grid-area: sidebar;
 
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
@@ -285,6 +289,8 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
 
+  padding-bottom: 2rem; 
+
   & > .card {
     padding: 1.5rem;
     gap: 1rem;
@@ -321,5 +327,30 @@ body {
 
   @include media-breakpoint-down(xl) {
     grid-template-columns: 1fr;
+  }
+}
+
+.spinner-wrapper {
+  background-color: white;
+
+  position: fixed; 
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  transition: display .1s allow-discrete;
+
+  & .spinner-border {
+    width: 4rem;
+    height: 4rem;
+
+    border-width: 6px;
   }
 }
