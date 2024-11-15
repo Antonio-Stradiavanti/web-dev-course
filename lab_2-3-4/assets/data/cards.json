@@ -1,0 +1,74 @@
+[
+    {
+        "imgSrc": "./assets/icons/pdf-icon.png",
+        "title": "Супер важный PDF-файл с расписанием на 2023 год",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1727395200000,
+            "suffix": "pdf"
+        }
+    },
+    {
+        "imgSrc": "./assets/icons/doc-icon.png",
+        "title": "Критерии оценки на экзамене в 2024 году",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1728086400000,
+            "suffix": "doc"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/xls-icon.png",
+        "title": "Табличка со списком покупок",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1731542400000,
+            "suffix": "xls"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/png-icon.png",
+        "title": "Фотка с отпуска, в который я так хочу вернуться ...",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1733356800000,
+            "suffix": "png"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/doc-icon.png",
+        "title": "Алексеев В. А. Базы данных лабораторная работа №3",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1731628800000,
+            "suffix": "doc"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/doc-icon.png",
+        "title": "Болдырихин О. В. Архитектура вычислительных систем лабораторная работа №2",
+        "details": {
+            "author": "Мананников Антон",
+            "lastModified": 1731715200000,
+            "suffix": "doc"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/pdf-icon.png",
+        "title": "Pro Spring 6 with Kotlin",
+        "details": {
+            "author": "Peter Späth",
+            "lastModified": 1729728000000,
+            "suffix": "pdf"
+        }    
+    },
+    {
+        "imgSrc": "./assets/icons/pdf-icon.png",
+        "title": "Java Persistence with Spring Data and Hibernate",
+        "details": {
+            "author": "Cătălin Tudose",
+            "lastModified": 1731369600000,
+            "suffix": "pdf"
+        }    
+    }
+]

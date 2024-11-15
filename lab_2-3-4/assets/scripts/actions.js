@@ -12,107 +12,80 @@ window.addEventListener(
     }
 );
 
-const cards = [
-    {
-        imgSrc: './assets/icons/pdf-icon.png',
-        title: 'Супер важный PDF-файл с расписанием на 2023 год',
-        details: {
-            author: 'Мананников Антон',
-            lastModified: new Date(Date.parse('2024-09-27'))
-        }
-    },
-    {
-        imgSrc: './assets/icons/doc-icon.png',
-        title: 'Критерии оценки на экзамене в 2024 году',
-        details: {
-            author: 'Мананников Антон',
-            lastModified: new Date(Date.parse('2024-10-05'))
-        }    
-    },
-    {
-        imgSrc: './assets/icons/xls-icon.png',
-        title: 'Табличка со списком покупок',
-        details: {
-            author: 'Мананников Антон',
-            lastModified: new Date(Date.parse('2024-12-16'))
-        }    
-    },
-    {
-        imgSrc: './assets/icons/png-icon.png',
-        title: 'Фотка с отпуска, в который я так хочу вернуться ...',
-        details: {
-            author: 'Мананников Антон',
-            lastModified: new Date(Date.parse('2024-12-05'))
-        }    
-    },
-    {
-        imgSrc: './assets/icons/doc-icon.png',
-        title: 'Алексеев В. А. Базы данных лабораторная работа №3',
-        details: {
-            author: 'Мананников Антон',
-            lastModified: new Date(Date.parse('2024-11-15'))
-        }    
-    }
-];
+
+const sortOptions = {
+    default: 'По умолчанию',
+    newest: 'Сначала новые',
+    oldest: 'Сначала старые'
+};
+
+const filterOptions = {
+    all: 'Все типы',
+    pdf: 'PDF',
+    doc: 'DOC',
+    xls: 'XLS',
+    png: 'PNG'
+};
+
 
 const dateFormatOptions = {year: 'numeric', month: 'long', day: '2-digit'};
 const ruLocale = 'ru-RU';
 
 
-
-function loadCards(category = 'default') {
+async function loadCards(
+    sortOption = sortOptions.default, 
+    filterOption = filterOptions.all
+) {
     const cardsContainer = document.querySelector('.cards');
     cardsContainer.innerHTML = '';
     
-    let sortedCards;
+    const cards = await (await fetch('/lab_2-3-4/assets/data/cards.json')).json();
 
-    if (category == 'newest') {
-        sortedCards = cards.toSorted(
+    const filteredCards = filterOption === filterOptions.all
+        ? cards
+        : cards.filter(
+            (element) => element.details.suffix == filterOption.toLowerCase()
+        )
+    ;
+
+    const sortedCards = sortOption === sortOption.all 
+        ? filteredCards
+        : filteredCards.toSorted(
             (cardA, cardB) => {
-                // Большие идут вперед
-                return cardB.details.lastModified - cardA.details.lastModified;
+                // Множитель определяет порядок сортировки: cardA - cardB -- сначала старые, если идут снгачала новые, то их надо просто домножить на -1.
+                const mult = sortOption === sortOptions.newest ? -1 : 1;
+                return mult * (cardA.details.lastModified - cardB.details.lastModified);
             }
-        );
-    }
-    else if (category == 'oldest') {
-        sortedCards = cards.toSorted(
-            (cardA, cardB) => {
-                // Меньшие идут вперед
-                return cardA.details.lastModified - cardB.details.lastModified;
-            }
-        );
-    }
-    else {
-        sortedCards = cards;
-    }
+        )
+    ; 
+
 
     sortedCards.forEach(
         card => {
-            const cardContainer = document.createElement('article');
-            cardContainer.classList.add('card', 'flex-row');
+        const cardContainer = document.createElement('article');
+        cardContainer.classList.add('card', 'flex-row');
 
-            const cardImg = document.createElement('img');
-            cardImg.src = card.imgSrc;
+        const cardImg = document.createElement('img');
+        cardImg.src = card.imgSrc;
 
-            const cardBody = document.createElement('div');
-            cardBody.classList.add('card-body');
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
 
-            cardBody.innerHTML = `
-                <h5>${card.title}</h5>
-                <p class="card-text">
-                    Создал: <strong>${card.details.author}</strong>  
-                </p>
-                <p class="card-text">
-                    Последние изменения: ${card.details.lastModified.toLocaleDateString(ruLocale, dateFormatOptions)}
-                </p>
-            `;
+        cardBody.innerHTML = `
+            <h5>${card.title}</h5>
+            <p class="card-text">
+                Создал: <strong>${card.details.author}</strong>  
+            </p>
+            <p class="card-text">
+                Последние изменения: ${new Date(card.details.lastModified).toLocaleDateString(ruLocale, dateFormatOptions)}
+            </p>
+        `;
 
-            cardContainer.appendChild(cardImg);
-            cardContainer.appendChild(cardBody);
+        cardContainer.appendChild(cardImg);
+        cardContainer.appendChild(cardBody);
 
-            cardsContainer.appendChild(cardContainer);
-        }
-    );
+        cardsContainer.appendChild(cardContainer);
+    });
 }
 
 const dropdownButton = document.getElementById('dropdownButton');
@@ -122,38 +95,33 @@ const dropdownButtonIcon = `
     </svg>
 `;
 
-const dropdownItems = Array.from(document.querySelector('.section-header .dropdown').getElementsByClassName('dropdown-item'));
+const sortDropdownItems = Array.from(document.querySelector('.section-header .dropdown').getElementsByClassName('dropdown-item'));
+let currentSortOption = sortDropdownItems[0];
+currentSortOption.classList.add('active');
 
-const sortOptions = {
-    default: 'По умолчанию',
-    newest: 'Сначала новые',
-    oldest: 'Сначала старые'
-};
+const filterButtonGroupItems = Array.from(document.querySelector('.main-content .btn-group').getElementsByClassName('btn-check'));
+let currentFilterOption = filterButtonGroupItems[0];
+currentFilterOption.setAttribute('checked', true);
 
-dropdownItems.forEach((element) => {
-    element.addEventListener('click', (event) => {
-        if (event.target.innerText == sortOptions.newest) {
-            loadCards('newest');
-            dropdownButton.innerHTML = `
-                ${sortOptions.newest}
-                ${dropdownButtonIcon}    
-            `;
-        }
-        else if (event.target.innerText == sortOptions.oldest) {
-            loadCards('oldest');
-            dropdownButton.innerHTML = `
-                ${sortOptions.oldest}
-                ${dropdownButtonIcon}    
-            `;
-        }
-        else {
-            loadCards();
-            dropdownButton.innerHTML = `
-                ${sortOptions.default}
-                ${dropdownButtonIcon}    
-            `; 
-        }
-    });
-});
 
-document.addEventListener('DOMContentLoaded', () => loadCards());
+function sortCards(event) {
+    loadCards(event.target.innerText, currentFilterOption.nextElementSibling.innerText);
+    dropdownButton.innerHTML = `
+        ${sortOptions.newest}
+        ${dropdownButtonIcon}    
+    `;
+
+    currentSortOption.classList.remove('active');
+    event.target.classList.add('active');    
+    currentSortOption = event.target; 
+}
+
+function filterCards(event) {
+    loadCards(currentSortOption, event.target.nextElementSibling.innerText);
+}
+
+sortDropdownItems.forEach(element => element.addEventListener('click', sortCards));
+
+filterButtonGroupItems.forEach(element => element.addEventListener('input', filterCards));
+
+document.addEventListener('DOMContentLoaded', loadCards);
