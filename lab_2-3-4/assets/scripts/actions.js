@@ -34,16 +34,24 @@ const ruLocale = 'ru-RU';
 
 async function loadCards(
     sortOption = sortOptions.default, 
-    filterOption = filterOptions.all
+    filterOption = filterOptions.all,
+    searchQuery = ''
 ) {
     const cardsContainer = document.querySelector('.cards');
     cardsContainer.innerHTML = '';
     
     const cards = await (await fetch('/lab_2-3-4/assets/data/cards.json')).json();
 
-    const filteredCards = filterOption === filterOptions.all
+    const foundCards = searchQuery === ''
         ? cards
         : cards.filter(
+            (element) => element.title.search(searchQuery) != -1
+        )
+    ;
+
+    const filteredCards = filterOption === filterOptions.all
+        ? foundCards
+        : foundCards.filter(
             (element) => element.details.suffix == filterOption.toLowerCase()
         )
     ;
@@ -101,27 +109,46 @@ currentSortOption.classList.add('active');
 
 const filterButtonGroupItems = Array.from(document.querySelector('.main-content .btn-group').getElementsByClassName('btn-check'));
 let currentFilterOption = filterButtonGroupItems[0];
-currentFilterOption.setAttribute('checked', true);
 
 
 function sortCards(event) {
-    loadCards(event.target.innerText, currentFilterOption.nextElementSibling.innerText);
-    dropdownButton.innerHTML = `
-        ${sortOptions.newest}
-        ${dropdownButtonIcon}    
-    `;
-
     currentSortOption.classList.remove('active');
     event.target.classList.add('active');    
     currentSortOption = event.target; 
+
+    loadCards(currentSortOption.innerText, currentFilterOption.nextElementSibling.innerText);
+
+    dropdownButton.innerHTML = `
+        ${event.target.innerText}
+        ${dropdownButtonIcon}    
+    `;
 }
 
-function filterCards(event) {
-    loadCards(currentSortOption, event.target.nextElementSibling.innerText);
+
+function filterCardsBySuffix(event) {
+    currentFilterOption = event.target;
+
+    loadCards(currentSortOption.innerText, currentFilterOption.nextElementSibling.innerText);
 }
+
+
+const searchForm = document.getElementById('searchForm');
+function filterCardsByTitle(event) {
+    const searchQuery = event.target.querySelector('input[type="text"]').value;
+    loadCards(currentSortOption.innerText, currentFilterOption.nextElementSibling.innerText, searchQuery);
+
+    event.preventDefault();
+}
+
+searchForm.addEventListener('submit', filterCardsByTitle);
+
 
 sortDropdownItems.forEach(element => element.addEventListener('click', sortCards));
 
-filterButtonGroupItems.forEach(element => element.addEventListener('input', filterCards));
+filterButtonGroupItems.forEach(element => element.addEventListener('input', filterCardsBySuffix));
 
-document.addEventListener('DOMContentLoaded', loadCards);
+document.addEventListener('DOMContentLoaded', () => {
+    currentFilterOption.checked = true;
+
+    loadCards(currentSortOption.innerText, currentFilterOption.nextElementSibling.innerText)
+});
