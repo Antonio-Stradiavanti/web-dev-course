@@ -1,0 +1,111 @@
+/* Разработка */
+// sass --no-source-map --watch ./idz/assets/styles/scss/style.scss ./idz/assets/styles/css/style.css
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+// Переопределение переменных
+$primary: #BAE249;
+$primary-bg-subtle: #BAE249;
+$primary-bg-shade: #688B05;
+
+$danger: #E24949;
+
+$body-bg: #1D2F30;
+$dark: #0B1919;
+$light: #FFFFFF;
+$gray-900: #899D9D;
+
+$border-width: 1px;
+$element-primary-focus-border-color: #83A440;
+$element-primary-focus-border-offset: calc(-2*$border-width - 3px);
+
+
+$border-radius: 0;
+
+$input-btn-padding-x: 1.78125rem;
+$input-btn-padding-y: .65625rem;
+
+// элементы форм
+$form-feedback-icon-invalid: none;
+$form-feedback-icon-valid: none;
+$form-label-font-size: .75rem;
+$form-label-margin-bottom: .1875rem;
+
+$input-border-color: transparent;
+$input-focus-border-color: transparent;
+
+$input-padding-x: 1rem;
+$input-padding-y: .71875rem;
+
+$input-bg: $gray-900;
+$input-color: $dark; 
+
+$input-disabled-bg: $light;
+$input-disabled-color: $gray-900;
+
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/variables-dark";
+// Переопределение ассоциативных массивов переменных
+
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+// Кастомные настройки стилей
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 16px;
+    padding: 24px;
+}
+
+.btn-outline-primary,
+.form-control {
+    position: relative;
+    box-shadow: none !important;
+}
+
+.btn-outline-primary {
+    &:focus {
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: $element-primary-focus-border-offset;
+            left: $element-primary-focus-border-offset;
+            right: $element-primary-focus-border-offset;
+            bottom: $element-primary-focus-border-offset;
+            border: $border-width solid $element-primary-focus-border-color;
+        }
+    }
+    &:active {
+        --bs-btn-active-bg: #{$primary-bg-shade};
+        --bs-btn-active-border-color: transparent;   
+    }
+    &:hover {
+        background-color: $primary-bg-subtle;
+    }
+    &:disabled {
+        border-color: $gray-900;
+        color: $gray-900; 
+    }
+}
+
+.form-control {
+    &:focus {
+        outline: $border-width solid $element-primary-focus-border-color;
+        outline-offset: 3px;
+    }
+    &.is-invalid {
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.fields {
+    display: flex;
+    align-items: end;
+    gap: 1rem; 
+}
